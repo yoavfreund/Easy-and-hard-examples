@@ -1,0 +1,22 @@
+\begin{thebibliography}{2}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bartlett et~al.(2017)Bartlett, Foster, and
+  Telgarsky]{bartlett2017spectrally}
+Bartlett, P.~L., Foster, D.~J., and Telgarsky, M.~J.
+\newblock Spectrally-normalized margin bounds for neural networks.
+\newblock \emph{Advances in Neural Information Processing Systems},
+  30:\penalty0 6240--6249, 2017.
+
+\bibitem[Freund et~al.(2004)Freund, Mansour, and
+  Schapire]{freund2004generalization}
+Freund, Y., Mansour, Y., and Schapire, R.~E.
+\newblock Generalization bounds for averaged classifiers.
+\newblock \emph{The annals of statistics}, 32\penalty0 (4):\penalty0
+  1698--1722, 2004.
+
+\end{thebibliography}
