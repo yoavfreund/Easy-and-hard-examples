@@ -1,0 +1,37 @@
+\begin{thebibliography}{1}
+
+\bibitem{Bagging}
+Leo Breiman.
+\newblock Bagging predictors.
+\newblock {\em Machine learning}, 24:123--140, 1996.
+
+\bibitem{cifar10}
+Alex Krizhevsky, Geoffrey Hinton, et~al.
+\newblock Learning multiple layers of features from tiny images.
+\newblock 2009.
+
+\bibitem{focal_loss}
+Chen Liu, Xiaomeng Dong, Michael Potter, Hsi-Ming Chang, and Ravi Soni.
+\newblock Adversarial focal loss: Asking your discriminator for hard examples.
+\newblock {\em arXiv preprint arXiv:2207.07739}, 2022.
+
+\bibitem{stacked_ovr}
+Weiwei Liu, Ivor~W Tsang, and Klaus-Robert M{\"u}ller.
+\newblock An easy-to-hard learning paradigm for multiple classes and multiple
+  labels.
+\newblock {\em The Journal of Machine Learning Research}, 18, 2017.
+
+\bibitem{cifar10h}
+Joshua~C Peterson, Ruairidh~M Battleday, Thomas~L Griffiths, and Olga
+  Russakovsky.
+\newblock Human uncertainty makes classification more robust.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 9617--9626, 2019.
+
+\bibitem{deephash}
+Cheng Yan, Guansong Pang, Xiao Bai, Chunhua Shen, Jun Zhou, and Edwin Hancock.
+\newblock Deep hashing by discriminating hard examples.
+\newblock In {\em Proceedings of the 27th ACM international conference on
+  multimedia}, pages 1535--1542, 2019.
+
+\end{thebibliography}

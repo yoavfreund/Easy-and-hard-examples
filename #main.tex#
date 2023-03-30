@@ -20,6 +20,14 @@
 
 \section{Introduction}
 
+Distinguishing between easy and hard examples is an active area of
+research~\cite{}. Most of this research is based on quantifying the
+hardness of an example by considering the number of learning
+iterations required to get the correct label on same example. This
+requires knowing the correct label and is therefor hard to apply to
+unlabeled test examples.
+
+
 Modern DNN have increasingly complex architectures involving tens of millions of parameters. Experience shows that increasing the depth and width of the DNN generally leads to better performance. The question we ask is whether increasing the number of parameters is equally important for every test example. We carried some experiments using CIFAR-10. Not surprisingly, we find that different examples require different levels of complexity. 
 
 What {\em is} surprising, however, is the fact that for {\em most} examples a very simple network suffices, only a small fraction of the examples benefits from complex networks. We call examples of the first type {\em easy} and those of the second type {\em hard}. our results suggest that the hardness of an example is an {\em inherent} property of the example and depends only weakly on the type and architecture of the network.
