@@ -20,6 +20,14 @@
 
 \section{Introduction}
 
+Distinguishing between easy and hard examples is an active area of
+research~\cite{}. Most of this research is based on quantifying the
+hardness of an example by considering the number of learning
+iterations required to get the correct label on same example. This
+requires knowing the correct label and is therefor hard to apply to
+unlabeled test examples.
+
+
 Modern DNN have increasingly complex architectures involving tens of millions of parameters. Experience shows that increasing the depth and width of the DNN generally leads to better performance. The question we ask is whether increasing the number of parameters is equally important for every test example. We carried some experiments using CIFAR-10. Not surprisingly, we find that different examples require different levels of complexity. 
 
 What {\em is} surprising, however, is the fact that for {\em most} examples a very simple network suffices, only a small fraction of the examples benefits from complex networks. We call examples of the first type {\em easy} and those of the second type {\em hard}. our results suggest that the hardness of an example is an {\em inherent} property of the example and depends only weakly on the type and architecture of the network.
@@ -42,15 +50,90 @@ I will look for more paper focusing on easy-confusing examples. Till now, I find
 
 \section{Theory}
 
+Many learning algorithms are based on finding the single best
+rule. Ensemble methods such as Bagging and Random Forests are based on
+combining many rules, each of which is close to
+otimal. Averaging/voting across the rules results in a more stable and
+more accurate rule.  We use a similar logic for classsification with
+one important twist: when the ratio between +1 and -1 predictions is
+close to 50\%/50\% our combination rule outputs 0, which can be
+interpreted as ``I don't know'' (IDK).
+
+Figure~\ref{fig:duality} depics the behaviour of an ensemble of classifiers
+in the dual spaces: the sample space and the classifier space.
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{figs/SupportSet.jpg}
+\label{fig:struc}
+\caption{\textbf{Duality between classifiers and examples} Each point
+  in the sample space figure corresponds to a sample, the three shaded
+  sets correspponds to an ensemble of 3 classification rules with
+  similar training error. ``Easy -'' is an instance on which the
+  ensemble predicts unanimously ``-'', while ``Easy+'' is an instance
+  on which the unanimous prediction is ``+''. It is this unanimity
+  that makes the instance ``easy''. The hard instance is one on which
+  classifiers disagree.  The classifier space (parameter space),
+  demonstrates the same relationships between instances and
+  classifiers, but here each classifier is a point and the instances
+  define boundaries between classifiers that predict ``+' or ``-'' on
+  the instance. THe {\em support set} is the set of classifiers whose
+  performance is close to optimal. The three dots correspond to the
+  ensemble of three classifiers. Finally, easy instances are ones on
+  which the rules in the support set are unanimous, while the hard
+  example splits the support set in two. \label{fig:duality}}
+\end{figure}
+
+
+\subsection{Binary Case}
+In a normal binary classification task, given an input $\textbf{x}$, the predictor will output either $+1$ or $-1$. Our framework not only predicts whether the example is negtive or positive, but also estimates the confidence of the prediction. And when the confidence level is not high enough, we output $0$ rather than $+1$ or $-1$ for "I don't know". 
+
+Usually in a binary classification task, a neural networks predictor calculates a real value. In the training stage this value can be further transfered by a sigmoid funtion to a real value ranging from 0 to 1 and then pluged into the loss function; while in the inferencing stage, this value can be compared with 0 to decide whether this example belongs to the positive class or the negative class. Denote this value calculated by predictor $f \left(\cdot , \mathcal{P}\right)$ as $O_f \left(\cdot , \mathcal{P}\right)$. If $O_f \left(x , \mathcal{P}\right)$ is larger than 0, the example will be classified into the positive class, otherwise the negative class.
+
+\textit{\textbf{Assumption}} As we change the pertubation $\mathcal{P}$ to get $O_f \left(x , \mathcal{P}_1\right), O_f \left(x , \mathcal{P}_2\right),\cdots, O_f \left(x , \mathcal{P}_i\right),\cdots,O_f \left(x , \mathcal{P}_E\right) $, the values $O_f \left(x , \mathcal{P}_i\right)$ obeys a normal distribution $\mathcal{N}(\mu,{\sigma}^2)$. 
+
+The mean value $\mu$ should be positive if this example belongs to the positive class and negative if it belongs to the negative class. After training an ensemble $f \left(\cdot , \mathcal{P}_1\right), f \left(\cdot , \mathcal{P}_2\right),\cdots, f \left(\cdot , \mathcal{P}_i\right),\cdots,f \left(\cdot , \mathcal{P}_E\right) $, we can esitimate how confident we are to say $\mu$ is positive or negative based on $O_f \left(x , \mathcal{P}_1\right), O_f \left(x , \mathcal{P}_2\right),\cdots, O_f \left(x , \mathcal{P}_i\right),\cdots,O_f \left(x , \mathcal{P}_E\right) $. This can be done by \textit{t-test}. The null hypothesis is $\mu = 0$, and the \textit{t}-statistic is: 
+
+\begin{equation}
+    t = \frac{\overline{O}_f\left(x , \mathcal{P}\right)}{S/\sqrt{E}}
+\end{equation}
+
+where
+    \begin{eqnarray}
+            \overline{O}_f\left(x , \mathcal{P}\right) &= \frac{1}{E} \sum_{i=1}^E O_f\left(x , \mathcal{P}_i\right) \\
+            S^2 &= \frac{1}{E-1} \sum_{i=1}^E {(O_f\left(x , \mathcal{P}_i\right) - \overline{O}_f\left(x , \mathcal{P}\right))}^2
+    \end{eqnarray}
+
+denote the $\textit{p}$-value of the test as $\textit{p}$, we define our confidence as:
+\begin{equation}
+    confidence = -sign( \overline{O}_f\left(x , \mathcal{P}\right))*log(\textit{p})
+\end{equation}
+
+If the predictors are very confident that the example belongs to the positive class, the confidence should be a very large positive value; if the predictors are confident of the negtatice class, it should be a very small negative value. If the predictors are unsure, the confidence value would be close to 0. We can set a threshold to discriminate class+ and class-. Further, with this confidence value, we can set one threshold for confidence class+ and another thereshold for confident class-. In the regime between the two thresholds, the predictors will say "I don't know".
+
+\subsection{Multiclass Case}\label{sec:multi}
+In a multiclass classification task, $ \textbf{O}_f \left(x , \mathcal{P}\right)$ is no longer a real value but a $R^C$ vector, $C$ is the number of classes. In the training stage, a softmax can be operated on $ \textbf{O}_f $ and further used in the loss function. In the inferencing stage, $\max_{j} \textbf{O}_{f,i}$ will be taken as the final prediction result, where $\textbf{O}_{f,j}$ refers to the $j$th dimension of the $ \textbf{O}_f $ vector.
+
+To apply our \textit{t-test}-based method, we take each multiclass classification task as multiple binary classification tasks. Based on $\textbf{O}_{f,j} \left(x , \mathcal{P}_1\right),\cdots, \textbf{O}_{f,j} \left(x , \mathcal{P}_i\right),\cdots,\textbf{O}_{f,j} \left(x , \mathcal{P}_E\right) $, we can calculate the \textit{t}-statistic $\textit{t}_j$ and get the \textit{p}-value $\textit{p}_j$ and finally the confidence value $\textit{confidence}_j$ for class $j$. 
+
+We can have different ways to make use of the confidence values, for example:
+\begin{enumerate}
+    \item The class with the largest confident value will be the predicted class.
+    \item Instead of predicting one class, the class with the largest confident value and classes whose confidence is no smaller than the largest by a certain amount will form a prediction set.
+    \item We can set a threshold as in the binary case. If $\textit{confidence}_j$ is smaller than the threshold, then the example doesn't belong to class j, otherwise the predictors think the example belongs to class j. Similarly, we can set two thresholds for confident of class j, confident not class j and "I don't know".
+\end{enumerate}
+
+The second and the third ways bring a problem: the example may belong to multiple classes or none of the classes. When this happens, it suggests that this example is a "hard" example, because it makes the predictors confused among these classes. The experiment section shows that this confusion indeed happens for human. Therefore, it can be benifit to allow the predictors to say that they are confused and further careful actions are needed to make a decision(For example, call stronger predictors to classify the example), rather than simply give a prediction without confidence. 
+
+
 Let $\mathcal{D}$ be a dataset containing $\left\{\left( \textbf{x}_i ,y_i\right)\right\}_{i=1}^N $,where $\textbf{x}$ is the oberserved feature vector, $y$ is the label in a classification task or a numerical value in a regression task. For a predictor with a specific architecture $f$ (For example, a ResNet),we can apply a pertubation $\mathcal{P}$ in the training process of $f$ and get a predictor $f \left(\cdot , \mathcal{P}\right)$. When a new observed feature vector $textbf{x}$ comes, the predictor gives a prediction $f \left(\textbf{x} , \mathcal{P}\right)$. Since there are many different kinds of predictors, we can also train a set of predictors with different architectures $f_1,f_2,\cdots,f_i,\cdots,f_K$
 
 \begin{figure}[H]
-    \includegraphics[scale=0.55]{figs/overall_structure.png}
+    \includegraphics[width=\textwidth]{figs/overall_structure.png}
 \label{fig:struc}
 \caption{\textbf{Structure of Our Framework}}
 \end{figure}
 
-\subsection{Two Pertubations: BootStrap and Random Starting Points}
+\subsection{Three types of Pertubations: BootStrap, Architecture Starting Points and Architecture }
 There are two common ways to pertubate the training process:
 
 \textit{\textbf{Bootstrap}} We can construct a training set $\mathcal{T}$ by randomly draw $M$ examples $\left\{\left( \textbf{x}_i ,y_i\right)\right\}_{i=1}^M $ from $\mathcal{D}$ with replacement. We can sample a set a $\mathcal{T}_1,\mathcal{T}_2,\cdots,\mathcal{T}_i,\cdots,\mathcal{T}_E$ independently, and train a $f$ on each of the training set.
@@ -113,45 +196,6 @@ Not necessarily to be accurate, the ensemble's expectation of being correct is $
 In the above section, we know that being order-correct is important for a classification task when making using of an ensemble. Clearly it's not realistic to train infinite predictors to get $Q^*$. If the ensemble size is not large enough, simply applying the majority vote may not give reliable prediction.
 
 \section{Method}
-\subsection{Binary Case}
-In a normal binary classification task, given an input $\textbf{x}$, the predictor will output either $+1$ or $-1$. Our framework not only predicts whether the example is negtive or positive, but also estimates the confidence of the prediction. And when the confidence level is not high enough, we output $0$ rather than $+1$ or $-1$ for "I don't know". 
-
-Usually in a binary classification task, a neural networks predictor calculates a real value. In the training stage this value can be further transfered by a sigmoid funtion to a real value ranging from 0 to 1 and then pluged into the loss function; while in the inferencing stage, this value can be compared with 0 to decide whether this example belongs to the positive class or the negative class. Denote this value calculated by predictor $f \left(\cdot , \mathcal{P}\right)$ as $O_f \left(\cdot , \mathcal{P}\right)$. If $O_f \left(x , \mathcal{P}\right)$ is larger than 0, the example will be classified into the positive class, otherwise the negative class.
-
-\textit{\textbf{Assumption}} As we change the pertubation $\mathcal{P}$ to get $O_f \left(x , \mathcal{P}_1\right), O_f \left(x , \mathcal{P}_2\right),\cdots, O_f \left(x , \mathcal{P}_i\right),\cdots,O_f \left(x , \mathcal{P}_E\right) $, the values $O_f \left(x , \mathcal{P}_i\right)$ obeys a normal distribution $\mathcal{N}(\mu,{\sigma}^2)$. 
-
-The mean value $\mu$ should be positive if this example belongs to the positive class and negative if it belongs to the negative class. After training an ensemble $f \left(\cdot , \mathcal{P}_1\right), f \left(\cdot , \mathcal{P}_2\right),\cdots, f \left(\cdot , \mathcal{P}_i\right),\cdots,f \left(\cdot , \mathcal{P}_E\right) $, we can esitimate how confident we are to say $\mu$ is positive or negative based on $O_f \left(x , \mathcal{P}_1\right), O_f \left(x , \mathcal{P}_2\right),\cdots, O_f \left(x , \mathcal{P}_i\right),\cdots,O_f \left(x , \mathcal{P}_E\right) $. This can be done by \textit{t-test}. The null hypothesis is $\mu = 0$, and the \textit{t}-statistic is: 
-
-\begin{equation}
-    t = \frac{\overline{O}_f\left(x , \mathcal{P}\right)}{S/\sqrt{E}}
-\end{equation}
-
-where
-    \begin{eqnarray}
-            \overline{O}_f\left(x , \mathcal{P}\right) &= \frac{1}{E} \sum_{i=1}^E O_f\left(x , \mathcal{P}_i\right) \\
-            S^2 &= \frac{1}{E-1} \sum_{i=1}^E {(O_f\left(x , \mathcal{P}_i\right) - \overline{O}_f\left(x , \mathcal{P}\right))}^2
-    \end{eqnarray}
-
-denote the $\textit{p}$-value of the test as $\textit{p}$, we define our confidence as:
-\begin{equation}
-    confidence = -sign( \overline{O}_f\left(x , \mathcal{P}\right))*log(\textit{p})
-\end{equation}
-
-If the predictors are very confident that the example belongs to the positive class, the confidence should be a very large positive value; if the predictors are confident of the negtatice class, it should be a very small negative value. If the predictors are unsure, the confidence value would be close to 0. We can set a threshold to discriminate class+ and class-. Further, with this confidence value, we can set one threshold for confidence class+ and another thereshold for confident class-. In the regime between the two thresholds, the predictors will say "I don't know".
-
-\subsection{Multiclass Case}\label{sec:multi}
-In a multiclass classification task, $ \textbf{O}_f \left(x , \mathcal{P}\right)$ is no longer a real value but a $R^C$ vector, $C$ is the number of classes. In the training stage, a softmax can be operated on $ \textbf{O}_f $ and further used in the loss function. In the inferencing stage, $\max_{j} \textbf{O}_{f,i}$ will be taken as the final prediction result, where $\textbf{O}_{f,j}$ refers to the $j$th dimension of the $ \textbf{O}_f $ vector.
-
-To apply our \textit{t-test}-based method, we take each multiclass classification task as multiple binary classification tasks. Based on $\textbf{O}_{f,j} \left(x , \mathcal{P}_1\right),\cdots, \textbf{O}_{f,j} \left(x , \mathcal{P}_i\right),\cdots,\textbf{O}_{f,j} \left(x , \mathcal{P}_E\right) $, we can calculate the \textit{t}-statistic $\textit{t}_j$ and get the \textit{p}-value $\textit{p}_j$ and finally the confidence value $\textit{confidence}_j$ for class $j$. 
-
-We can have different ways to make use of the confidence values, for example:
-\begin{enumerate}
-    \item The class with the largest confident value will be the predicted class.
-    \item Instead of predicting one class, the class with the largest confident value and classes whose confidence is no smaller than the largest by a certain amount will form a prediction set.
-    \item We can set a threshold as in the binary case. If $\textit{confidence}_j$ is smaller than the threshold, then the example doesn't belong to class j, otherwise the predictors think the example belongs to class j. Similarly, we can set two thresholds for confident of class j, confident not class j and "I don't know".
-\end{enumerate}
-
-The second and the third ways bring a problem: the example may belong to multiple classes or none of the classes. When this happens, it suggests that this example is a "hard" example, because it makes the predictors confused among these classes. The experiment section shows that this confusion indeed happens for human. Therefore, it can be benifit to allow the predictors to say that they are confused and further careful actions are needed to make a decision(For example, call stronger predictors to classify the example), rather than simply give a prediction without confidence. 
 
 \section{Experiment Result}
 This section shows the experiment results on \textit{CIFAR10}\cite{cifar10} and \textit{CIFAR10H}\cite{cifar10h}. \textit{CIFAR10} includes 50000 image-label pairs for training and 10000 image-label pairs for testing. \textit{CIFAR10H} includes extra information for each image which is the frequencies of each label to be chosen as the true label by a group of human labeler. The architectures we used include: ShuffleNet, ShuffleNetV2, MobileNetV2, Regnetx, MobileNet, Efficientnetb0, GoogleNet, Densenet121, Resnext29, ResNet18, SeNet18, SimpleDLA, VGG19, DPN92(Will add citition for these architectures). Table\cite{table:arc_basic} shows the basic information of these architectures.

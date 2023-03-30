@@ -17,8 +17,9 @@
     "float")
    (LaTeX-add-labels
     "fig:struc"
-    "equ1"
+    "fig:duality"
     "sec:multi"
+    "equ1"
     "table:arc_basic"
     "fig:kde_vgg_mobilenet"
     "fig:example_prob"
