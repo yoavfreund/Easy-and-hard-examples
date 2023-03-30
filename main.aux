@@ -1,0 +1,65 @@
+\relax 
+\citation{stacked_ovr}
+\citation{deephash}
+\citation{focal_loss}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Theory}{2}{}\protected@file@percent }
+\newlabel{fig:struc}{{3}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Structure of Our Framework}}}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Two Pertubations: BootStrap and Random Starting Points}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Why Ensemble Works}{2}{}\protected@file@percent }
+\citation{Bagging}
+\citation{Bagging}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}For Regression Tasks}{3}{}\protected@file@percent }
+\newlabel{equ1}{{3}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}For Classification Tasks}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}More on the Classification task}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Method}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Binary Case}{4}{}\protected@file@percent }
+\citation{cifar10}
+\citation{cifar10h}
+\citation{table:arc_basic}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Multiclass Case}{5}{}\protected@file@percent }
+\newlabel{sec:multi}{{4.2}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experiment Result}{5}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Basic Properties of the Architectures}: Parameter numbers refers to the number of trainable parameters in each architecture. Forward Time refers to the averaged forward propagation time for one CIFAR image. We tested these values on 3 different devices: Nvidia RTX 3080Ti, Nvidia RTX 3060 and 11th Gen Intel(R) Core(TM) i5-11400F CPU.The last two columns show the accuracy of single predictors trained with different pertubation methods. Bootstrap samples 30000 examples from the 50000 training data.}}{6}{}\protected@file@percent }
+\newlabel{table:arc_basic}{{1}{6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Compare the Strong and Weak Architectures}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {KDE Plot of Confidence of Strong and Weak Architectures}: The strong architecture is Vgg19, the weak architecture is MobileNet}}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Human: Cat(1.0); Machine: Dog}}}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Human: Cat(1.0); Machine: Dog}}}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Ensemble Size=10, Random Start}}}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Ensemble Size=100, Random Start}}}{7}{}\protected@file@percent }
+\newlabel{fig:kde_vgg_mobilenet}{{2}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Compare Human Results with Machine Results}{7}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Examples That Human and Machine have the Same Confusion}: The tables shows the frequencies of votes of human labeler and machine predictors. The rows with index 'single' are the frequencies for each single class, the unshown classes all have zero frequencies. The rows with index 'cumsum' are the culmulative sum of the above row.}}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{8}{}\protected@file@percent }
+\newlabel{fig:example_prob}{{3}{8}}
+\newlabel{l1entropyscatter}{{5.2}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Entropy-L1 Scatter Plot}}}{9}{}\protected@file@percent }
+\newlabel{cdf_score}{{5.2}{10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {CDF of The Score for Different Set Sizes}}}{10}{}\protected@file@percent }
+\bibstyle{plain}
+\bibdata{refs.bib}
+\newlabel{subfig:a}{{6(a)}{11}}
+\newlabel{sub@subfig:a}{{(a)}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Examples of Human and Machine Classification} (a)\textbf  {Human}: Cat(1.0). \textbf  {Machine}: Dog. (b)\textbf  {Human}: Frog(0.49), Cat(0.47), Bird(0.04). \textbf  {Machine}: Frog. (c)\textbf  {Human}: Dog(1.0). \textbf  {Machine}: Dog. (d)\textbf  {Human}: Bird(0.92), Ship(0.02), Frog(0.02), Dog(0.02), Cat(0.02). \textbf  {Machine}: Cat, Dear. (e)\textbf  {Human}: Airplane(0.56), Ship(0.44). \textbf  {Machine}: Truck, Airplane. (f)\textbf  {Human}: Deer(0.6), Horse(0.4). \textbf  {Machine}: Deer, Horse. (g)\textbf  {Human}: Cat(0.72), Frog(0.09), Deer(0.09), Bird(0.08), Airplane(0.02). \textbf  {Machine}: Cat, Frog, Bird. (h)\textbf  {Human}: Cat(0.65), Dog(0.21), Deer(0.14). \textbf  {Machine}: Dog, Deer, Cat}}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {}}}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {}}}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {}}}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {}}}{11}{}\protected@file@percent }
+\newlabel{fig:human_machine_example}{{6}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Example: Weak-Strong Flow}{11}{}\protected@file@percent }
+\newlabel{WSFlow}{{5.3}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Running Time of Weak-Strong Flow}: The weak model is MobileNet, the strong model is DPN92, the ensemble size for both architectures are 10. Batch Size indicates how how many images are processed parallelly by the weak-strong flow. The unit for all values is ms.}}{12}{}\protected@file@percent }
+\newlabel{strong_only}{{5.3}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Running Time of the Strong Ensemble Only}: The strong model is DPN92, the ensemble size is 10. Batch Size indicates how how many images are processed parallelly. The unit for all values is ms}}{12}{}\protected@file@percent }
+\gdef \@abspage@last{12}

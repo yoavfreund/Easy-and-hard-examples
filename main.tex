@@ -224,6 +224,37 @@ For each image, we can use entropy of the frequency distribution by human/machin
     \caption{\textbf{Entropy-L1 Scatter Plot}}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{figs/cdf_score_full.png}
+    \label{cdf_score}
+    \caption{\textbf{CDF of The Score for Different Set Sizes}}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+
+    \subfigure[]{\includegraphics[scale=0.4]{figs/new_comb_fig/1_3594.png} \label{subfig:a}}
+    \hspace{-28mm}
+    \subfigure[]{\includegraphics[scale=0.4]{figs/new_comb_fig/1_5511.png}}
+    \hspace{-28mm}
+    \subfigure[]{\includegraphics[scale=0.4]{figs/new_comb_fig/1_5035.png}}
+    \hspace{-28mm}
+    \subfigure[]{\includegraphics[scale=0.4]{figs/new_comb_fig/2_2270.png}}
+
+    \subfigure[]{\includegraphics[scale=0.4]{figs/new_comb_fig/2_3211.png}}
+    \hspace{-28mm}
+    \subfigure[]{\includegraphics[scale=0.4]{figs/new_comb_fig/2_3962.png}}
+    \hspace{-28mm}
+    \subfigure[]{\includegraphics[scale=0.4]{figs/new_comb_fig/3_9497.png}}
+    \hspace{-28mm}
+    \subfigure[]{\includegraphics[scale=0.4]{figs/new_comb_fig/3_470.png}}
+    \caption{\textbf{Examples of Human and Machine Classification} (a)\textbf{Human}: Cat(1.0). \textbf{Machine}: Dog. (b)\textbf{Human}: Frog(0.49), Cat(0.47), Bird(0.04). \textbf{Machine}: Frog. (c)\textbf{Human}: Dog(1.0). \textbf{Machine}: Dog. (d)\textbf{Human}: Bird(0.92), Ship(0.02), Frog(0.02), Dog(0.02), Cat(0.02). \textbf{Machine}: Cat, Dear. (e)\textbf{Human}: Airplane(0.56), Ship(0.44). \textbf{Machine}: Truck, Airplane. (f)\textbf{Human}: Deer(0.6), Horse(0.4). \textbf{Machine}: Deer, Horse. (g)\textbf{Human}: Cat(0.72), Frog(0.09), Deer(0.09), Bird(0.08), Airplane(0.02). \textbf{Machine}: Cat, Frog, Bird. (h)\textbf{Human}: Cat(0.65), Dog(0.21), Deer(0.14). \textbf{Machine}: Dog, Deer, Cat} 
+    \label{fig:human_machine_example}
+\end{figure}
+
+
 
 \subsection{Example: Weak-Strong Flow}
 To see how the above finds can be applied, we establish a weak-strong flow where we consturct an ensemble with a weak yet fast architecture and another ensemble with a strong yet slow architecture. For each coming image, the weak ensemble labels $+$, $-$, or $0$ for each class using the 3rd way in section \ref{sec:multi} with two thresholds, where $+$ represents being confident of belonging to this class, $-$ for confident of not belonging to this class, or $0$ for "I don't know" . If there is only one class with the label $+$, then this class will be the final result. Otherwise we call the strong the strong ensemble and make a prediction with the 1st way in section \ref{sec:multi}. 
