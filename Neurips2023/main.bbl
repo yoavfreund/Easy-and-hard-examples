@@ -1,0 +1,72 @@
+\begin{thebibliography}{10}
+
+\bibitem{Bagging}
+Leo Breiman.
+\newblock Bagging predictors.
+\newblock {\em Machine learning}, 24:123--140, 1996.
+
+\bibitem{mc-dropout}
+Yarin Gal and Zoubin Ghahramani.
+\newblock Dropout as a bayesian approximation: Representing model uncertainty
+  in deep learning.
+\newblock In {\em international conference on machine learning}, pages
+  1050--1059. PMLR, 2016.
+
+\bibitem{selective-classification}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock Selective classification for deep neural networks.
+\newblock {\em Advances in neural information processing systems}, 30, 2017.
+
+\bibitem{selectivenet}
+Yonatan Geifman and Ran El-Yaniv.
+\newblock Selectivenet: A deep neural network with an integrated reject option.
+\newblock In {\em International conference on machine learning}, pages
+  2151--2159. PMLR, 2019.
+
+\bibitem{bias-reduced-uncertainty}
+Yonatan Geifman, Guy Uziel, and Ran El-Yaniv.
+\newblock Bias-reduced uncertainty estimation for deep neural classifiers.
+\newblock {\em arXiv preprint arXiv:1805.08206}, 2018.
+
+\bibitem{hullermeier2019aleatoric}
+Eyke H{\"u}llermeier and Willem Waegeman.
+\newblock Aleatoric and epistemic uncertainty in machine learning: A tutorial
+  introduction.
+\newblock {\em arXiv preprint arXiv:1910.09457}, 5, 2019.
+
+\bibitem{cifar10}
+Alex Krizhevsky, Geoffrey Hinton, et~al.
+\newblock Learning multiple layers of features from tiny images.
+\newblock 2009.
+
+\bibitem{deep-ensemble}
+Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell.
+\newblock Simple and scalable predictive uncertainty estimation using deep
+  ensembles.
+\newblock {\em Advances in neural information processing systems}, 30, 2017.
+
+\bibitem{focal_loss}
+Chen Liu, Xiaomeng Dong, Michael Potter, Hsi-Ming Chang, and Ravi Soni.
+\newblock Adversarial focal loss: Asking your discriminator for hard examples.
+\newblock {\em arXiv preprint arXiv:2207.07739}, 2022.
+
+\bibitem{stacked_ovr}
+Weiwei Liu, Ivor~W Tsang, and Klaus-Robert M{\"u}ller.
+\newblock An easy-to-hard learning paradigm for multiple classes and multiple
+  labels.
+\newblock {\em The Journal of Machine Learning Research}, 18, 2017.
+
+\bibitem{cifar10h}
+Joshua~C Peterson, Ruairidh~M Battleday, Thomas~L Griffiths, and Olga
+  Russakovsky.
+\newblock Human uncertainty makes classification more robust.
+\newblock In {\em Proceedings of the IEEE/CVF International Conference on
+  Computer Vision}, pages 9617--9626, 2019.
+
+\bibitem{deephash}
+Cheng Yan, Guansong Pang, Xiao Bai, Chunhua Shen, Jun Zhou, and Edwin Hancock.
+\newblock Deep hashing by discriminating hard examples.
+\newblock In {\em Proceedings of the 27th ACM international conference on
+  multimedia}, pages 1535--1542, 2019.
+
+\end{thebibliography}
