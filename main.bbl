@@ -5,6 +5,12 @@ Leo Breiman.
 \newblock Bagging predictors.
 \newblock {\em Machine learning}, 24:123--140, 1996.
 
+\bibitem{hullermeier2019aleatoric}
+Eyke H{\"u}llermeier and Willem Waegeman.
+\newblock Aleatoric and epistemic uncertainty in machine learning: A tutorial
+  introduction.
+\newblock {\em arXiv preprint arXiv:1910.09457}, 5, 2019.
+
 \bibitem{cifar10}
 Alex Krizhevsky, Geoffrey Hinton, et~al.
 \newblock Learning multiple layers of features from tiny images.

@@ -10,7 +10,7 @@
 \usepackage{parskip}
 \usepackage{float}
 
-\title{Looking for Controversy\\ {\large an ensemble approach to confidence rated prediction} }
+\title{Looking for Controversy\\ {\large an ensemble approach to epistemic uncertainty} }
 \author{}
 \date{November 2022}
 
@@ -19,14 +19,35 @@
 \maketitle
 
 \section{Introduction}
-
+\iffalse
 Distinguishing between easy and hard examples is an active area of
 research~\cite{}. Most of this research is based on quantifying the
 hardness of an example by considering the number of learning
 iterations required to get the correct label on same example. This
 requires knowing the correct label and is therefor hard to apply to
 unlabeled test examples.
+\fi
 
+Quantifying prediction uncertainty is an active area of research in
+machine learning and
+elsewhere~\cite{hora1996aleatory,der2009aleatory,hullermeier2019aleatoric}. One
+useful way to distinguish between different types of uncertainty is to
+differentiate aleatory or irreducible uncertainty from epistemological
+or reducible uncertainty. Consider predicting the outcome of flipping
+a coin whose (unknown) probability of heads is $p=1/4$. If we know $p$
+we should always predict ``tails'' and will be incorrect with
+probability $1/4$. This uncertainty is irreducible, because no amount
+of additional data will change it. On the other hand, if we flip the
+coin $n$ times and find that $m$ of the outcomes were ``heads'' we can
+estimate the true value of $p$ to be approximately
+$\frac{m}{n} \pm \frac{1}{\sqrt{n}}$. The range
+$\pm \frac{1}{\sqrt{n}}$ is the epistemological or reduxible
+uncertainty, because it relates to our {\em knowledge} regarding $p$
+which can be improved by increasing $n$.
+
+In this paper we show how epistemological uncertainty in DNN can be reduced using a simpl ensemble based method. Our approach is based on projecting the model uncrtainty onto instances and measuring the resulting per-nstance uncertainty.
+
+{\bf Yoav} till here.
 
 Modern DNN have increasingly complex architectures involving tens of millions of parameters. Experience shows that increasing the depth and width of the DNN generally leads to better performance. The question we ask is whether increasing the number of parameters is equally important for every test example. We carried some experiments using CIFAR-10. Not surprisingly, we find that different examples require different levels of complexity. 
 
@@ -77,6 +98,7 @@ perturbing the training process. In this paper we consider three ways of perturb
 \item{\bf Architecture} Choose a different architecture for each ensemble member.
 \end{enumerate}
 
+We divide our discussion to the 
 We use the binary classification problem as a building block of our solution for multi-label prediction.
 
 \begin{figure}[tbh]

@@ -1,14 +1,17 @@
 \relax 
+\citation{hora1996aleatory}
+\citation{der2009aleatory}
+\citation{hullermeier2019aleatoric}
 \citation{stacked_ovr}
-\citation{deephash}
-\citation{focal_loss}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{1}\protected@file@percent }
+\citation{deephash}
+\citation{focal_loss}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Theory}{2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Binary Case}{2}\protected@file@percent }
 \newlabel{fig:struc}{{3}{3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Duality between classifiers and examples} Each point in the sample space figure corresponds to a sample, the three shaded sets correspponds to an ensemble of 3 classification rules with similar training error. ``Easy -'' is an instance on which the ensemble predicts unanimously ``-'', while ``Easy+'' is an instance on which the unanimous prediction is ``+''. It is this unanimity that makes the instance ``easy''. The hard instance is one on which classifiers disagree. The classifier space (parameter space), demonstrates the same relationships between instances and classifiers, but here each classifier is a point and the instances define boundaries between classifiers that predict ``+' or ``-'' on the instance. THe {\em  support set} is the set of classifiers whose performance is close to optimal. The three dots correspond to the ensemble of three classifiers. Finally, easy instances are ones on which the rules in the support set are unanimous, while the hard example splits the support set in two. }}{3}\protected@file@percent }
 \newlabel{fig:duality}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Binary Case}{3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Multiclass Case}{4}\protected@file@percent }
 \newlabel{sec:multi}{{3.2}{4}}
 \newlabel{fig:struc}{{3.2}{5}}
@@ -18,12 +21,12 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}For Regression Tasks}{5}\protected@file@percent }
 \citation{Bagging}
 \citation{Bagging}
+\newlabel{equ1}{{10}{6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}For Classification Tasks}{6}\protected@file@percent }
 \citation{cifar10}
 \citation{cifar10h}
 \citation{table:arc_basic}
-\newlabel{equ1}{{10}{6}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}For Classification Tasks}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}More on the Classification task}{6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}More on the Classification task}{7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Method}{7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5}Experiment Result}{7}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Basic Properties of the Architectures}: Parameter numbers refers to the number of trainable parameters in each architecture. Forward Time refers to the averaged forward propagation time for one CIFAR image. We tested these values on 3 different devices: Nvidia RTX 3080Ti, Nvidia RTX 3060 and 11th Gen Intel(R) Core(TM) i5-11400F CPU.The last two columns show the accuracy of single predictors trained with different pertubation methods. Bootstrap samples 30000 examples from the 50000 training data.}}{7}\protected@file@percent }
@@ -49,8 +52,7 @@
 \bibstyle{plain}
 \bibdata{refs.bib}
 \bibcite{Bagging}{1}
-\bibcite{cifar10}{2}
-\bibcite{focal_loss}{3}
+\bibcite{hullermeier2019aleatoric}{2}
 \newlabel{subfig:a}{{7(a)}{12}}
 \newlabel{sub@subfig:a}{{(a)}{12}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Examples of Human and Machine Classification} (a)\textbf  {Human}: Cat(1.0). \textbf  {Machine}: Dog. (b)\textbf  {Human}: Frog(0.49), Cat(0.47), Bird(0.04). \textbf  {Machine}: Frog. (c)\textbf  {Human}: Dog(1.0). \textbf  {Machine}: Dog. (d)\textbf  {Human}: Bird(0.92), Ship(0.02), Frog(0.02), Dog(0.02), Cat(0.02). \textbf  {Machine}: Cat, Dear. (e)\textbf  {Human}: Airplane(0.56), Ship(0.44). \textbf  {Machine}: Truck, Airplane. (f)\textbf  {Human}: Deer(0.6), Horse(0.4). \textbf  {Machine}: Deer, Horse. (g)\textbf  {Human}: Cat(0.72), Frog(0.09), Deer(0.09), Bird(0.08), Airplane(0.02). \textbf  {Machine}: Cat, Frog, Bird. (h)\textbf  {Human}: Cat(0.65), Dog(0.21), Deer(0.14). \textbf  {Machine}: Dog, Deer, Cat}}{12}\protected@file@percent }
@@ -64,9 +66,11 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {}}}{12}\protected@file@percent }
 \newlabel{fig:human_machine_example}{{7}{12}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Example: Weak-Strong Flow}{12}\protected@file@percent }
-\bibcite{stacked_ovr}{4}
-\bibcite{cifar10h}{5}
-\bibcite{deephash}{6}
+\bibcite{cifar10}{3}
+\bibcite{focal_loss}{4}
+\bibcite{stacked_ovr}{5}
+\bibcite{cifar10h}{6}
+\bibcite{deephash}{7}
 \newlabel{WSFlow}{{5.3}{13}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Running Time of Weak-Strong Flow}: The weak model is MobileNet, the strong model is DPN92, the ensemble size for both architectures are 10. Batch Size indicates how how many images are processed parallelly by the weak-strong flow. The unit for all values is ms.}}{13}\protected@file@percent }
 \newlabel{strong_only}{{5.3}{13}}
