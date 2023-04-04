@@ -379,7 +379,11 @@ As explained in section \ref{sec:multi}, each multiclass example can be transfor
 
 
 \subsection{Compare Human Results with Machine Results}
+With our t-test based method, we can have different ways to combine the outputs of different architectures. Here we illustrate two ways and compare their results with human prediction. 
+
+\subsubsection{Combination Way 1 }
 Following the framework shown in \ref{fig:struc}, we use the 3rd way in section \ref{sec:multi} and only set a single threshold for each architecture and allow prediction sets rather than only a single class as the output. Then for each image, each architecture will give a prediction set. We regard every class in the set as getting one vote from the architecture. Combine the sets by all the architectures, we get a collection. In this collection, each class among the 10 will get zero or one or multiple votes from the architectures. Based on the frequencies of each class's votes, we can measure how likely it is for each class to be chosen as a final prediction. With CIFAR10H, we can compare the results of human labeler and our machine predictors. Figure \ref{fig:example_prob} illustrates some examples that human and machine have the same confusion.
+
 
 \begin{figure}[H]
     \centering
@@ -401,11 +405,20 @@ For each image, we can use entropy of the frequency distribution by human/machin
     \caption{\textbf{Entropy-L1 Scatter Plot}}
 \end{figure}
 
+\subsubsection{Combination Way 2}
+Using the 3rd way in section \ref{sec:multi} and set two thresholds for each architecture to separate 'Confident Positive(+)', 'I don't know(0)', and 'Confident Negative(-)'. For each test instance, each class gets $K$ votes in ${+,0,-}$ from the $K$ architectures. If a class has more than $T$ votes of $+$ and 0 vote of $-$, then we say this class belong to the prediction set of this instance.
+
+We compare the results of this combination way with the human results in the following way:
+for a test instance, we have the machine generated prediction set and each class's  frequencies to be chosen by human. we first sum up the human frequencies of the classes in the prediction set to measure how much the machine results can match the human's judgements. Then we penalty large set size by minus the set size divided by the number of classes $C$. 
+
+With this combination method. A prediction set whose size is 1 can get a score ranging from -0.1 to 0.9, size 2 can get -0.2 to 0.8 and size 3 from -0.3 to 0.7. Figure\ref{fig:cdf_score} and Figure\ref{fig:human_machine_example} shows the culmulative distribution function of the distribution of this score under different set sizes.
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{figs/cdf_score_full.png}
     \label{cdf_score}
-    \caption{\textbf{CDF of The Score for Different Set Sizes}}
+    \caption{\textbf{CDF of The Score for Different Set Sizes} To choose the 2 thresholds to separate $+,0,-$, we first get the culmulative distribution function(CDF) of positive binary instances and complementary culmulative distribution function(CCDF) of negative binary instances. Set the confidence score where negative CCDF value = 10\% and the score where positive CDF value=90\% as the 2 thresholds. $T=1$, which is the least thresholds of $+$ votes.}
 \end{figure}
 
 

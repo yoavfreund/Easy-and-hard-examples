@@ -60,16 +60,18 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Ensemble Size=100, Random Start}}}{8}{figure.3}\protected@file@percent }
 \newlabel{fig:kde_vgg_mobilenet}{{3}{8}{\textbf {KDE Plot of Confidence of Strong and Weak Architectures}: The strong architecture is Vgg19, the weak architecture is MobileNet}{figure.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Compare Human Results with Machine Results}{8}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}Combination Way 1 }{8}{subsubsection.5.2.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Examples That Human and Machine have the Same Confusion}: The tables shows the frequencies of votes of human labeler and machine predictors. The rows with index 'single' are the frequencies for each single class, the unshown classes all have zero frequencies. The rows with index 'cumsum' are the culmulative sum of the above row.}}{9}{figure.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{9}{figure.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{9}{figure.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{9}{figure.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{9}{figure.4}\protected@file@percent }
 \newlabel{fig:example_prob}{{4}{9}{\textbf {Examples That Human and Machine have the Same Confusion}: The tables shows the frequencies of votes of human labeler and machine predictors. The rows with index 'single' are the frequencies for each single class, the unshown classes all have zero frequencies. The rows with index 'cumsum' are the culmulative sum of the above row}{figure.4}{}}
-\newlabel{l1entropyscatter}{{5.2}{10}{Compare Human Results with Machine Results}{figure.4}{}}
+\newlabel{l1entropyscatter}{{5.2.1}{10}{Combination Way 1}{figure.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Entropy-L1 Scatter Plot}}}{10}{figure.5}\protected@file@percent }
-\newlabel{cdf_score}{{5.2}{11}{Compare Human Results with Machine Results}{figure.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {CDF of The Score for Different Set Sizes}}}{11}{figure.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}Combination Way 2}{10}{subsubsection.5.2.2}\protected@file@percent }
+\newlabel{cdf_score}{{5.2.2}{11}{Combination Way 2}{subsubsection.5.2.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {CDF of The Score for Different Set Sizes} To choose the 2 thresholds to separate $+,0,-$, we first get the culmulative distribution function(CDF) of positive binary instances and complementary culmulative distribution function(CCDF) of negative binary instances. Set the confidence score where negative CCDF value = 10\% and the score where positive CDF value=90\% as the 2 thresholds. $T=1$, which is the least thresholds of $+$ votes.}}{11}{figure.6}\protected@file@percent }
 \bibstyle{plain}
 \bibdata{refs.bib}
 \bibcite{Bagging}{{1}{}{{}}{{}}}
