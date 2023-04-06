@@ -1,52 +1,55 @@
-This is BibTeX, Version 0.99d (TeX Live 2021)
+This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: refs.bib
-Warning--I didn't find a database entry for "hora1996aleatory"
-Warning--I didn't find a database entry for "der2009aleatory"
+I was expecting a `,' or a `}'---line 99 of file refs.bib
+ :   
+ :   publisher={Citeseer}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "table:arc_basic"
 Warning--empty journal in cifar10
-You've used 12 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            566 strings with 6086 characters,
-and the built_in function-call counts, 4395 in all, are:
-= -- 440
-> -- 215
-< -- 4
-+ -- 85
-- -- 72
-* -- 273
-:= -- 718
-add.period$ -- 38
-call.type$ -- 12
-change.case$ -- 71
+            590 strings with 6724 characters,
+and the built_in function-call counts, 5786 in all, are:
+= -- 586
+> -- 260
+< -- 5
++ -- 103
+- -- 86
+* -- 370
+:= -- 936
+add.period$ -- 50
+call.type$ -- 16
+change.case$ -- 90
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 181
-empty$ -- 322
-format.name$ -- 72
-if$ -- 939
+cite$ -- 17
+duplicate$ -- 237
+empty$ -- 442
+format.name$ -- 86
+if$ -- 1236
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 12
-newline$ -- 63
-num.names$ -- 24
-pop$ -- 75
+int.to.str$ -- 16
+missing$ -- 16
+newline$ -- 83
+num.names$ -- 32
+pop$ -- 91
 preamble$ -- 1
-purify$ -- 59
+purify$ -- 74
 quote$ -- 0
-skip$ -- 152
+skip$ -- 194
 stack$ -- 0
-substring$ -- 246
-swap$ -- 59
-text.length$ -- 4
+substring$ -- 367
+swap$ -- 73
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 64
 warning$ -- 1
-while$ -- 38
-width$ -- 14
-write$ -- 132
-(There were 5 warnings)
+while$ -- 55
+width$ -- 18
+write$ -- 176
+(There was 1 error message)

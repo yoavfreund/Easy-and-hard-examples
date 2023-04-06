@@ -2,19 +2,39 @@
  "main"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("inputenc" "utf8")))
+                     '(("inputenc" "utf8") ("fontenc" "T1") ("neurips_2023" "nonatbib") ("graphicx" "pdftex")))
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
     "article"
     "art10"
+    "neurips_2023"
     "inputenc"
-    "amsmath"
+    "fontenc"
+    "hyperref"
+    "url"
     "booktabs"
-    "geometry"
+    "amsfonts"
+    "nicefrac"
+    "microtype"
+    "xcolor"
+    "amsmath"
+    "float"
     "graphicx"
     "subfigure"
-    "parskip"
-    "float")
+    "parskip")
+   (TeX-add-symbols
+    "msym"
+    "reals"
+    "RR"
+    "Nat"
+    "CC")
    (LaTeX-add-labels
     "fig:struc"
     "fig:duality"

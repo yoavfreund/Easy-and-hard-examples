@@ -22,7 +22,6 @@
 % to avoid loading the natbib package, add option nonatbib:
 %    \usepackage[nonatbib]{neurips_2023}
 
-
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{hyperref}       % hyperlinks
@@ -39,6 +38,11 @@
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{parskip}
+
+%My Macros
+\newfont{\msym}{msbm10}
+\newcommand{\reals}{\mbox{\msym R}}
+
 
 \title{Looking for Controversy\\ {\large an ensemble approach to epistemic uncertainty} }
 
@@ -100,18 +104,39 @@
 
 
 \section{Introduction}
-\iffalse
-Distinguishing between easy and hard examples is an active area of
-research~\cite{}. Most of this research is based on quantifying the
-hardness of an example by considering the number of learning
-iterations required to get the correct label on same example. This
-requires knowing the correct label and is therefor hard to apply to
-unlabeled test examples.
-\fi
-
 Quantifying prediction uncertainty is an active area of research in
 machine learning and
-elsewhere~\cite{hora1996aleatory,der2009aleatory,hullermeier2019aleatoric}. One
+elsewhere~\cite{breiman1993fitting,li2008knows,hora1996aleatory,mc-dropout,der2009aleatory,hullermeier2019aleatoric}. A
+useful way to reason about uncertainty is to divide it into {\em
+  aleatoric} vs {\em epistemic} uncertainty.We demonstrate this
+partition by considering our model to be a DNN for binary
+classification.  We consider a single example $x$ our goal is to
+preict the associated label $y \in \{-1,+1\}$.
+
+
+Suppose the learned
+prediction function $f$ (the weights of the NN) is a fixed function
+$f: X \to \reals$. The aleatoric, ot intrinsic uncertainty is captured
+by the conditional probability $p_a=P(y=+1|f(x)>a)$. This so-called
+``calibration function'' is ``intrinsic'' because it does not depend
+on the training set.
+
+On the other hand the epistemic uncertainty orresponds to {\em model uncertainty} i.e. the uncertainty the we have in the model
+
+
+
+knowledge as to which function $f$ is best. 
+
+
+divide prediction uncertainty is to divide preidction uncertainty it into
+aleatory vs. epistemic uncertainties. We briefly describe what this
+means in the context of binary classification using a NN. Denote a
+binary example by $(x,y)$. Let $M$ 
+
+
+
+
+
 useful way to distinguish between different types of uncertainty is to
 differentiate aleatory or irreducible uncertainty from epistemological
 or reducible uncertainty. Consider predicting the outcome of flipping
@@ -129,6 +154,7 @@ which can be improved by increasing $n$.
 In this paper we show how epistemological uncertainty in DNN can be reduced using a simpl ensemble based method. Our approach is based on projecting the model uncrtainty onto instances and measuring the resulting per-nstance uncertainty.
 
 {\bf Yoav} till here.
+
 
 Modern DNN have increasingly complex architectures involving tens of millions of parameters. Experience shows that increasing the depth and width of the DNN generally leads to better performance. The question we ask is whether increasing the number of parameters is equally important for every test example. We carried some experiments using CIFAR-10. Not surprisingly, we find that different examples require different levels of complexity. 
 
@@ -883,3 +909,7 @@ Table \ref{WSFlow} and \ref{strong_only} show the running time of the weak-stron
 \bibliographystyle{plain}
 \bibliography{refs.bib}
 \end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

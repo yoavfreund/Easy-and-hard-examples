@@ -1,9 +1,20 @@
 \begin{thebibliography}{10}
 
+\bibitem{breiman1993fitting}
+Leo Breiman.
+\newblock Fitting additive models to regression data: Diagnostics and
+  alternative views.
+\newblock {\em Computational Statistics \& Data Analysis}, 15(1):13--46, 1993.
+
 \bibitem{Bagging}
 Leo Breiman.
 \newblock Bagging predictors.
 \newblock {\em Machine learning}, 24:123--140, 1996.
+
+\bibitem{der2009aleatory}
+Armen Der~Kiureghian and Ove Ditlevsen.
+\newblock Aleatory or epistemic? does it matter?
+\newblock {\em Structural safety}, 31(2):105--112, 2009.
 
 \bibitem{mc-dropout}
 Yarin Gal and Zoubin Ghahramani.
@@ -28,6 +39,13 @@ Yonatan Geifman, Guy Uziel, and Ran El-Yaniv.
 \newblock Bias-reduced uncertainty estimation for deep neural classifiers.
 \newblock {\em arXiv preprint arXiv:1805.08206}, 2018.
 
+\bibitem{hora1996aleatory}
+Stephen~C Hora.
+\newblock Aleatory and epistemic uncertainty in probability elicitation with an
+  example from hazardous waste management.
+\newblock {\em Reliability Engineering \& System Safety}, 54(2-3):217--223,
+  1996.
+
 \bibitem{hullermeier2019aleatoric}
 Eyke H{\"u}llermeier and Willem Waegeman.
 \newblock Aleatoric and epistemic uncertainty in machine learning: A tutorial
@@ -44,6 +62,12 @@ Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell.
 \newblock Simple and scalable predictive uncertainty estimation using deep
   ensembles.
 \newblock {\em Advances in neural information processing systems}, 30, 2017.
+
+\bibitem{li2008knows}
+Lihong Li, Michael~L Littman, and Thomas~J Walsh.
+\newblock Knows what it knows: a framework for self-aware learning.
+\newblock In {\em Proceedings of the 25th international conference on Machine
+  learning}, pages 568--575, 2008.
 
 \bibitem{focal_loss}
 Chen Liu, Xiaomeng Dong, Michael Potter, Hsi-Ming Chang, and Ravi Soni.
