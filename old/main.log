@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  3 APR 2023 17:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  4 APR 2023 10:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -288,10 +288,6 @@ LaTeX Warning: Citation `hora1996aleatory' on page 1 undefined on input line 33
 LaTeX Warning: Citation `der2009aleatory' on page 1 undefined on input line 33.
 
 
-
-LaTeX Warning: Citation `hullermeier2019aleatoric' on page 1 undefined on input
- line 33.
-
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -335,96 +331,99 @@ File: figs/mobilenet_vgg_kde100_rsp.png Graphic file (type png)
 Package pdftex.def Info: figs/mobilenet_vgg_kde100_rsp.png  used on input line 
 286.
 (pdftex.def)             Requested size: 180.67499pt x 174.14499pt.
-[7]
-<figs/human_machine_agree_1.png, id=47, 496.85625pt x 291.0875pt>
+[7] [8 <./figs/mobilenet_vgg_kde10_bs.png> <./figs/mobilenet_vgg_kde10_rsp.png>
+ <./figs/mobilenet_vgg_kde100_rsp.png>]
+<figs/human_machine_agree_1.png, id=53, 496.85625pt x 291.0875pt>
 File: figs/human_machine_agree_1.png Graphic file (type png)
 <use figs/human_machine_agree_1.png>
-Package pdftex.def Info: figs/human_machine_agree_1.png  used on input line 297
+Package pdftex.def Info: figs/human_machine_agree_1.png  used on input line 300
 .
 (pdftex.def)             Requested size: 198.73897pt x 116.43292pt.
-<figs/human_machine_agree_2.png, id=48, 551.05875pt x 285.065pt>
+<figs/human_machine_agree_2.png, id=54, 551.05875pt x 285.065pt>
 File: figs/human_machine_agree_2.png Graphic file (type png)
 <use figs/human_machine_agree_2.png>
-Package pdftex.def Info: figs/human_machine_agree_2.png  used on input line 298
+Package pdftex.def Info: figs/human_machine_agree_2.png  used on input line 301
 .
 (pdftex.def)             Requested size: 220.41959pt x 114.02397pt.
-<figs/human_machine_agree_3.png, id=49, 551.05875pt x 280.04625pt>
+<figs/human_machine_agree_3.png, id=55, 551.05875pt x 280.04625pt>
 File: figs/human_machine_agree_3.png Graphic file (type png)
 <use figs/human_machine_agree_3.png>
-Package pdftex.def Info: figs/human_machine_agree_3.png  used on input line 300
+Package pdftex.def Info: figs/human_machine_agree_3.png  used on input line 303
 .
 (pdftex.def)             Requested size: 220.41959pt x 112.0165pt.
-<figs/human_machine_agree_4.png, id=50, 541.02126pt x 259.97125pt>
+<figs/human_machine_agree_4.png, id=56, 541.02126pt x 259.97125pt>
 File: figs/human_machine_agree_4.png Graphic file (type png)
 <use figs/human_machine_agree_4.png>
-Package pdftex.def Info: figs/human_machine_agree_4.png  used on input line 301
+Package pdftex.def Info: figs/human_machine_agree_4.png  used on input line 304
 .
 (pdftex.def)             Requested size: 216.40466pt x 103.98665pt.
- [8 <./figs/mobilenet_vgg_kde10_bs.png> <./figs/mobilenet_vgg_kde10_rsp.png> <.
-/figs/mobilenet_vgg_kde100_rsp.png>]
 <figs/l1_entropy_scatter.png, id=57, 922.44624pt x 870.25125pt>
 File: figs/l1_entropy_scatter.png Graphic file (type png)
 <use figs/l1_entropy_scatter.png>
-Package pdftex.def Info: figs/l1_entropy_scatter.png  used on input line 310.
+Package pdftex.def Info: figs/l1_entropy_scatter.png  used on input line 313.
 (pdftex.def)             Requested size: 461.22198pt x 435.12456pt.
  [9 <./figs/human_machine_agree_1.png> <./figs/human_machine_agree_2.png> <./fi
-gs/human_machine_agree_3.png> <./figs/human_machine_agree_4.png>]
-<figs/cdf_score_full.png, id=65, 614.295pt x 512.898pt>
+gs/human_machine_agree_3.png> <./figs/human_machine_agree_4.png>] [10 <./figs/l
+1_entropy_scatter.png>]
+
+LaTeX Warning: Reference `fig:cdf_score' on page 11 undefined on input line 324
+.
+
+<figs/cdf_score_full.png, id=69, 614.295pt x 512.898pt>
 File: figs/cdf_score_full.png Graphic file (type png)
 <use figs/cdf_score_full.png>
-Package pdftex.def Info: figs/cdf_score_full.png  used on input line 317.
+Package pdftex.def Info: figs/cdf_score_full.png  used on input line 329.
 (pdftex.def)             Requested size: 491.43666pt x 410.31894pt.
 
-Overfull \hbox (7.73979pt too wide) in paragraph at lines 317--319
+Overfull \hbox (7.73979pt too wide) in paragraph at lines 329--331
  [][] 
  []
 
-[10 <./figs/l1_entropy_scatter.png>]
 <figs/new_comb_fig/1_3594.png, id=70, 433.62pt x 289.08pt>
 File: figs/new_comb_fig/1_3594.png Graphic file (type png)
 <use figs/new_comb_fig/1_3594.png>
-Package pdftex.def Info: figs/new_comb_fig/1_3594.png  used on input line 326.
+Package pdftex.def Info: figs/new_comb_fig/1_3594.png  used on input line 338.
 (pdftex.def)             Requested size: 173.44492pt x 115.62994pt.
 <figs/new_comb_fig/1_5511.png, id=71, 433.62pt x 289.08pt>
 File: figs/new_comb_fig/1_5511.png Graphic file (type png)
 <use figs/new_comb_fig/1_5511.png>
-Package pdftex.def Info: figs/new_comb_fig/1_5511.png  used on input line 328.
+Package pdftex.def Info: figs/new_comb_fig/1_5511.png  used on input line 340.
 (pdftex.def)             Requested size: 173.44492pt x 115.62994pt.
 <figs/new_comb_fig/1_5035.png, id=72, 433.62pt x 289.08pt>
 File: figs/new_comb_fig/1_5035.png Graphic file (type png)
 <use figs/new_comb_fig/1_5035.png>
-Package pdftex.def Info: figs/new_comb_fig/1_5035.png  used on input line 330.
+Package pdftex.def Info: figs/new_comb_fig/1_5035.png  used on input line 342.
 (pdftex.def)             Requested size: 173.44492pt x 115.62994pt.
 <figs/new_comb_fig/2_2270.png, id=73, 433.62pt x 289.08pt>
 File: figs/new_comb_fig/2_2270.png Graphic file (type png)
 <use figs/new_comb_fig/2_2270.png>
-Package pdftex.def Info: figs/new_comb_fig/2_2270.png  used on input line 332.
+Package pdftex.def Info: figs/new_comb_fig/2_2270.png  used on input line 344.
 (pdftex.def)             Requested size: 173.44492pt x 115.62994pt.
 <figs/new_comb_fig/2_3211.png, id=74, 433.62pt x 289.08pt>
 File: figs/new_comb_fig/2_3211.png Graphic file (type png)
 <use figs/new_comb_fig/2_3211.png>
-Package pdftex.def Info: figs/new_comb_fig/2_3211.png  used on input line 334.
+Package pdftex.def Info: figs/new_comb_fig/2_3211.png  used on input line 346.
 (pdftex.def)             Requested size: 173.44492pt x 115.62994pt.
 <figs/new_comb_fig/2_3962.png, id=75, 433.62pt x 289.08pt>
 File: figs/new_comb_fig/2_3962.png Graphic file (type png)
 <use figs/new_comb_fig/2_3962.png>
-Package pdftex.def Info: figs/new_comb_fig/2_3962.png  used on input line 336.
+Package pdftex.def Info: figs/new_comb_fig/2_3962.png  used on input line 348.
 (pdftex.def)             Requested size: 173.44492pt x 115.62994pt.
 <figs/new_comb_fig/3_9497.png, id=76, 433.62pt x 289.08pt>
 File: figs/new_comb_fig/3_9497.png Graphic file (type png)
 <use figs/new_comb_fig/3_9497.png>
-Package pdftex.def Info: figs/new_comb_fig/3_9497.png  used on input line 338.
+Package pdftex.def Info: figs/new_comb_fig/3_9497.png  used on input line 350.
 (pdftex.def)             Requested size: 173.44492pt x 115.62994pt.
 <figs/new_comb_fig/3_470.png, id=77, 433.62pt x 289.08pt>
 File: figs/new_comb_fig/3_470.png Graphic file (type png)
 <use figs/new_comb_fig/3_470.png>
-Package pdftex.def Info: figs/new_comb_fig/3_470.png  used on input line 340.
+Package pdftex.def Info: figs/new_comb_fig/3_470.png  used on input line 352.
 (pdftex.def)             Requested size: 173.44492pt x 115.62994pt.
- [11 <./figs/cdf_score_full.png>]
-(./main.bbl [12 <./figs/new_comb_fig/1_3594.png> <./figs/new_comb_fig/1_5511.pn
-g> <./figs/new_comb_fig/1_5035.png> <./figs/new_comb_fig/2_2270.png> <./figs/ne
-w_comb_fig/2_3211.png> <./figs/new_comb_fig/2_3962.png> <./figs/new_comb_fig/3_
-9497.png> <./figs/new_comb_fig/3_470.png>]) [13] (./main.aux)
+[11 <./figs/cdf_score_full.png>] (./main.bbl [12 <./figs/new_comb_fig/1_3594.pn
+g> <./figs/new_comb_fig/1_5511.png> <./figs/new_comb_fig/1_5035.png> <./figs/ne
+w_comb_fig/2_2270.png> <./figs/new_comb_fig/2_3211.png> <./figs/new_comb_fig/2_
+3962.png> <./figs/new_comb_fig/3_9497.png> <./figs/new_comb_fig/3_470.png>])
+[13] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -433,10 +432,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3413 strings out of 480608
- 49142 string characters out of 5903631
- 305503 words of memory out of 5000000
- 19247 multiletter control sequences out of 15000+600000
+ 3414 strings out of 480608
+ 49157 string characters out of 5903631
+ 305510 words of memory out of 5000000
+ 19248 multiletter control sequences out of 15000+600000
  539743 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,12n,26p,1154b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -455,7 +454,7 @@ live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
 e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
 020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (13 pages, 2201835 bytes).
+Output written on main.pdf (13 pages, 2204578 bytes).
 PDF statistics:
  145 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream

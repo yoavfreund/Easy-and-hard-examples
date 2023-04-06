@@ -19,18 +19,19 @@
 \maketitle
 
 \section{Introduction}
-\iffalse
-Distinguishing between easy and hard examples is an active area of
-research~\cite{}. Most of this research is based on quantifying the
-hardness of an example by considering the number of learning
-iterations required to get the correct label on same example. This
-requires knowing the correct label and is therefor hard to apply to
-unlabeled test examples.
-\fi
 
 Quantifying prediction uncertainty is an active area of research in
 machine learning and
-elsewhere~\cite{hora1996aleatory,der2009aleatory,hullermeier2019aleatoric}. One
+elsewhere~\cite{breiman1993fitting,li2008knows,hora1996aleatory,mc-dropout,der2009aleatory,hullermeier2019aleatoric}. One
+useful way to reason about prediction uncertainty is to divide it into
+aleatory vs. epistemic uncertainties. We briefly describe what this
+means in the context of binary classification using a NN. Denote a
+binary example by $(x,y)$. Let $M$ 
+
+
+
+
+
 useful way to distinguish between different types of uncertainty is to
 differentiate aleatory or irreducible uncertainty from epistemological
 or reducible uncertainty. Consider predicting the outcome of flipping
