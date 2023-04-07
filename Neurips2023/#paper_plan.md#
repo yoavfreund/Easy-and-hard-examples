@@ -1,0 +1,50 @@
+## Abstract
+Main claim, there are examples that are inherently stable and others that are not. To first order, stability does not depend on the type of pertrubation.
+Second claim: this is consistent with human uncertainty.
+
+## Intro 1 page
+## Theory 2 pages
+### Using statistical tests to quantify stability
+
+#### Binary label
+* Assume normal, sign of mean - t-test
+* No assumption median - binomial test
+
+#### Multi-label
+* Using conformal prediction.
+
+### stability of stability
+using different methods of quantifying stability leads to similar results.
+
+## Experiments
+
+Currently CIFAR10, add CIFAR100 later.
+
+### stability of stability
+
+What we want to establish is that many examples are easy (agreement between models) and the level of disagreement according to different ensemble methods is similar.
+
+### Binary
+
+Contour plot to compare:
+* Random starting point vs. bootstrap
+* weak NN vs strong NN
+
+Use CDFs of marginals and thresholds defining region of IDK where cases go to
+next level.
+
+Table of number of NN that predict + vs number that predict - make it into a 3D  figure.
+
+### multi-label
+
+Compare two classifiers.
+
+* create a table with 0,1,2,3,4,>4 for each k,j compute: number of cases,
+mean and std of L1 distance between distributions,
+
+### relative to human
+* Compare with cifar10H
+
+### Anecdotal:
+
+Give a few of the highly confusable examples (by humans)
