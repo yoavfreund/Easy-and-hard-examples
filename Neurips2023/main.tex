@@ -394,11 +394,11 @@ This section shows the experiment results on \textit{CIFAR10}\cite{cifar10} and 
 As explained in section \ref{sec:multi}, each multiclass example can be transformed to multiple binary case. In our settings, each image can be divided to 10 image-class pairs. Each pair will have a label $+$ if the image belongs to this class, or $-$ if it doesn't.To compare the difference of the confidence values by weak and strong architectures, we assign a $\left[S,W\right]$ coordinates for each image-class pair. The $S$ value represents the confidence value for a strong architecture, while the $W$ represents a week. In this way, the 10000 test examples will be 100000 points on the $S-W$ plane. Figure \ref{fig:kde_vgg_mobilenet} shows the density distribution of these points with KDE plots.
 \begin{figure}[H]
     \centering
-    \subfigure[Human: Cat(1.0); Machine: Dog]{\includegraphics[width=2.5in]{figs/mobilenet_vgg_kde10_bs.png}}
-    \subfigure[Human: Cat(1.0); Machine: Dog]{\includegraphics[width=2.5in]{figs/mobilenet_vgg_kde10_bs.png}}
+    \subfigure[Ensemble Size=10, Random Start]{\includegraphics[width=2.5in]{figs/mobilenet_vgg_kde10_bs.png}}
+    \subfigure[Ensemble Size=10, Random Start]{\includegraphics[width=2.5in]{figs/mobilenet_vgg_kde100_bs.png}}
     \quad 
-    \subfigure[Ensemble Size=10, Random Start]{\includegraphics[width=2.5in]{figs/mobilenet_vgg_kde10_rsp.png}}
-    \subfigure[Ensemble Size=100, Random Start]{\includegraphics[width=2.5in]{figs/mobilenet_vgg_kde100_rsp.png}}
+    \subfigure[Ensemble Size=10, BootStrap]{\includegraphics[width=2.5in]{figs/mobilenet_vgg_kde10_rsp.png}}
+    \subfigure[Ensemble Size=100,BootStrap]{\includegraphics[width=2.5in]{figs/mobilenet_vgg_kde100_rsp.png}}
     \caption{\textbf{KDE Plot of Confidence of Strong and Weak Architectures}: The strong architecture is Vgg19, the weak architecture is MobileNet}
     \label{fig:kde_vgg_mobilenet}
 \end{figure}
