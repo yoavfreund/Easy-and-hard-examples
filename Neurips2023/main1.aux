@@ -1,0 +1,96 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{breiman1993fitting,li2008knows,hora1996aleatory,mc-dropout,der2009aleatory,hullermeier2019aleatoric}
+\citation{stacked_ovr}
+\citation{deephash}
+\citation{focal_loss}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{1}{section.2}\protected@file@percent }
+\citation{mc-dropout}
+\citation{deep-ensemble}
+\citation{selective-classification}
+\citation{bias-reduced-uncertainty}
+\citation{selective-classification}
+\citation{selectivenet}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Theory}{2}{section.3}\protected@file@percent }
+\newlabel{fig:struc}{{3}{3}{Theory}{Item.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {Duality between classifiers and examples} Each point in the sample space figure corresponds to a sample, the three shaded sets correspponds to an ensemble of 3 classification rules with similar training error. ``Easy -'' is an instance on which the ensemble predicts unanimously ``-'', while ``Easy+'' is an instance on which the unanimous prediction is ``+''. It is this unanimity that makes the instance ``easy''. The hard instance is one on which classifiers disagree. The classifier space (parameter space), demonstrates the same relationships between instances and classifiers, but here each classifier is a point and the instances define boundaries between classifiers that predict ``+' or ``-'' on the instance. THe {\em  support set} is the set of classifiers whose performance is close to optimal. The three dots correspond to the ensemble of three classifiers. Finally, easy instances are ones on which the rules in the support set are unanimous, while the hard example splits the support set in two. }}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:duality}{{1}{3}{\textbf {Duality between classifiers and examples} Each point in the sample space figure corresponds to a sample, the three shaded sets correspponds to an ensemble of 3 classification rules with similar training error. ``Easy -'' is an instance on which the ensemble predicts unanimously ``-'', while ``Easy+'' is an instance on which the unanimous prediction is ``+''. It is this unanimity that makes the instance ``easy''. The hard instance is one on which classifiers disagree. The classifier space (parameter space), demonstrates the same relationships between instances and classifiers, but here each classifier is a point and the instances define boundaries between classifiers that predict ``+' or ``-'' on the instance. THe {\em support set} is the set of classifiers whose performance is close to optimal. The three dots correspond to the ensemble of three classifiers. Finally, easy instances are ones on which the rules in the support set are unanimous, while the hard example splits the support set in two}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Binary Case}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Multiclass Case}{4}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:multi}{{3.2}{4}{Multiclass Case}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Performance on multi-label}{4}{section.4}\protected@file@percent }
+\citation{cifar10}
+\citation{cifar10h}
+\citation{table:arc_basic}
+\newlabel{fig:struc}{{4}{5}{Performance on multi-label}{Item.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Structure of Our Framework}}}{5}{figure.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Three types of Pertubations: BootStrap, Architecture Starting Points and Architecture }{5}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experiment Result}{5}{section.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \textbf  {Basic Properties of the Architectures}: Parameter numbers refers to the number of trainable parameters in each architecture. Forward Time refers to the averaged forward propagation time for one CIFAR image. We tested these values on 3 different devices: Nvidia RTX 3080Ti, Nvidia RTX 3060 and 11th Gen Intel(R) Core(TM) i5-11400F CPU.The last two columns show the accuracy of single predictors trained with different pertubation methods. Bootstrap samples 30000 examples from the 50000 training data.}}{6}{table.1}\protected@file@percent }
+\newlabel{table:arc_basic}{{1}{6}{\textbf {Basic Properties of the Architectures}: Parameter numbers refers to the number of trainable parameters in each architecture. Forward Time refers to the averaged forward propagation time for one CIFAR image. We tested these values on 3 different devices: Nvidia RTX 3080Ti, Nvidia RTX 3060 and 11th Gen Intel(R) Core(TM) i5-11400F CPU.The last two columns show the accuracy of single predictors trained with different pertubation methods. Bootstrap samples 30000 examples from the 50000 training data}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Stability of easy examples}{6}{subsection.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {KDE Plot of Confidence of Strong and Weak Architectures}: The strong architecture is Vgg19, the weak architecture is MobileNet\\ Add to this figure: compare bootstrap to random starting point on weak, same on strong. Mark with circles the easy positive and the easy negative.}}{6}{figure.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Ensemble Size=10, Random Start}}}{6}{figure.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Ensemble Size=10, Bootstrap}}}{6}{figure.3}\protected@file@percent }
+\newlabel{fig:kde_vgg_mobilenet}{{3}{6}{\textbf {KDE Plot of Confidence of Strong and Weak Architectures}: The strong architecture is Vgg19, the weak architecture is MobileNet\\ Add to this figure: compare bootstrap to random starting point on weak, same on strong. Mark with circles the easy positive and the easy negative}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Performance on multi-label}{7}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Comparison with Human labels}{7}{subsection.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Examples That Human and Machine have the Same Confusion}: The tables shows the frequencies of votes of human labeler and machine predictors. The rows with index 'single' are the frequencies for each single class, the unshown classes all have zero frequencies. The rows with index 'cumsum' are the culmulative sum of the above row.}}{7}{figure.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{7}{figure.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{7}{figure.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{7}{figure.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{7}{figure.4}\protected@file@percent }
+\newlabel{fig:example_prob}{{4}{7}{\textbf {Examples That Human and Machine have the Same Confusion}: The tables shows the frequencies of votes of human labeler and machine predictors. The rows with index 'single' are the frequencies for each single class, the unshown classes all have zero frequencies. The rows with index 'cumsum' are the culmulative sum of the above row}{figure.4}{}}
+\bibstyle{plain}
+\bibdata{refs.bib}
+\bibcite{breiman1993fitting}{{1}{}{{}}{{}}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {Running Time of Weak-Strong Flow}: The weak model is MobileNet, the strong model is DPN92, the ensemble size for both architectures are 10. Batch Size indicates how how many images are processed parallelly by the weak-strong flow. The unit for all values is ms.}}{8}{table.2}\protected@file@percent }
+\newlabel{WSFlow}{{2}{8}{\textbf {Running Time of Weak-Strong Flow}: The weak model is MobileNet, the strong model is DPN92, the ensemble size for both architectures are 10. Batch Size indicates how how many images are processed parallelly by the weak-strong flow. The unit for all values is ms}{table.2}{}}
+\newlabel{subfig:a}{{5(a)}{8}{Subfigure 5(a)}{subfigure.5.1}{}}
+\newlabel{sub@subfig:a}{{(a)}{8}{Subfigure 5(a)\relax }{subfigure.5.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Examples of Human and Machine Classification} (a)\textbf  {Human}: Cat(1.0). \textbf  {Machine}: Dog. (b)\textbf  {Human}: Frog(0.49), Cat(0.47), Bird(0.04). \textbf  {Machine}: Frog. (c)\textbf  {Human}: Dog(1.0). \textbf  {Machine}: Dog. (d)\textbf  {Human}: Bird(0.92), Ship(0.02), Frog(0.02), Dog(0.02), Cat(0.02). \textbf  {Machine}: Cat, Dear. (e)\textbf  {Human}: Airplane(0.56), Ship(0.44). \textbf  {Machine}: Truck, Airplane. (f)\textbf  {Human}: Deer(0.6), Horse(0.4). \textbf  {Machine}: Deer, Horse. (g)\textbf  {Human}: Cat(0.72), Frog(0.09), Deer(0.09), Bird(0.08), Airplane(0.02). \textbf  {Machine}: Cat, Frog, Bird. (h)\textbf  {Human}: Cat(0.65), Dog(0.21), Deer(0.14). \textbf  {Machine}: Dog, Deer, Cat}}{8}{figure.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{8}{figure.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{8}{figure.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{8}{figure.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {}}}{8}{figure.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {}}}{8}{figure.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {}}}{8}{figure.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {}}}{8}{figure.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {}}}{8}{figure.5}\protected@file@percent }
+\newlabel{fig:human_machine_example}{{5}{8}{\textbf {Examples of Human and Machine Classification} (a)\textbf {Human}: Cat(1.0). \textbf {Machine}: Dog. (b)\textbf {Human}: Frog(0.49), Cat(0.47), Bird(0.04). \textbf {Machine}: Frog. (c)\textbf {Human}: Dog(1.0). \textbf {Machine}: Dog. (d)\textbf {Human}: Bird(0.92), Ship(0.02), Frog(0.02), Dog(0.02), Cat(0.02). \textbf {Machine}: Cat, Dear. (e)\textbf {Human}: Airplane(0.56), Ship(0.44). \textbf {Machine}: Truck, Airplane. (f)\textbf {Human}: Deer(0.6), Horse(0.4). \textbf {Machine}: Deer, Horse. (g)\textbf {Human}: Cat(0.72), Frog(0.09), Deer(0.09), Bird(0.08), Airplane(0.02). \textbf {Machine}: Cat, Frog, Bird. (h)\textbf {Human}: Cat(0.65), Dog(0.21), Deer(0.14). \textbf {Machine}: Dog, Deer, Cat}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Example: Weak-Strong Flow}{8}{subsection.5.4}\protected@file@percent }
+\bibcite{Bagging}{{2}{}{{}}{{}}}
+\bibcite{der2009aleatory}{{3}{}{{}}{{}}}
+\bibcite{mc-dropout}{{4}{}{{}}{{}}}
+\bibcite{selective-classification}{{5}{}{{}}{{}}}
+\bibcite{selectivenet}{{6}{}{{}}{{}}}
+\bibcite{bias-reduced-uncertainty}{{7}{}{{}}{{}}}
+\bibcite{hora1996aleatory}{{8}{}{{}}{{}}}
+\bibcite{hullermeier2019aleatoric}{{9}{}{{}}{{}}}
+\bibcite{cifar10}{{10}{}{{}}{{}}}
+\bibcite{deep-ensemble}{{11}{}{{}}{{}}}
+\bibcite{li2008knows}{{12}{}{{}}{{}}}
+\bibcite{focal_loss}{{13}{}{{}}{{}}}
+\bibcite{stacked_ovr}{{14}{}{{}}{{}}}
+\bibcite{cifar10h}{{15}{}{{}}{{}}}
+\bibcite{deephash}{{16}{}{{}}{{}}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {Running Time of the Strong Ensemble Only}: The strong model is DPN92, the ensemble size is 10. Batch Size indicates how how many images are processed parallelly. The unit for all values is ms}}{9}{table.3}\protected@file@percent }
+\newlabel{strong_only}{{3}{9}{\textbf {Running Time of the Strong Ensemble Only}: The strong model is DPN92, the ensemble size is 10. Batch Size indicates how how many images are processed parallelly. The unit for all values is ms}{table.3}{}}
